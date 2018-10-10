@@ -1,0 +1,184 @@
+\documentclass[letterpaper,12pt]{report}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{sidecap}
+\usepackage[font={small}]{caption}
+\usepackage{float}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{cleveref}
+\usepackage{bigints}
+
+\usepackage[backend=biber,
+style=nejm,
+citestyle=authoryear-comp,
+bibstyle=authoryear,
+citetracker=true,
+mincitenames=1,
+maxcitenames=2,
+maxbibnames=99,
+uniquelist=false,
+uniquename=false,
+sorting=nyt,
+sortcites=false,
+isbn=false,doi=false,eprint=false,url=false]{biblatex}
+% \addbibresource{library.bib}
+\bibliography{library.bib}
+\renewcommand*\finalnamedelim{ \& }
+\AtEveryBibitem{\clearfield{note}}
+
+\graphicspath{{figures/}}
+
+\newcommand{\thesistitle}{The buildup of stream segregation is driven by noisy competition between auditory sequence-selective neuronal populations}
+\newcommand{\thesisauthor}{Sara Steele}
+\newcommand{\thesisadvisor}{John Rinzel, Daniel Tranchina}
+\newcommand{\graddate}{September 2016}
+\newcommand\defeq{\stackrel{\mathclap{\normalfont\mbox{\tiny def}}}{=}}
+
+%% Page layout (customized to letter paper and NYU requirements):
+\setlength{\oddsidemargin}{.6in}
+\setlength{\textwidth}{5.8in}
+\setlength{\topmargin}{.1in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.3in}
+\setlength{\footskip}{.5in}
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\itshape}
+
+\doublespacing
+\begin{document}
+
+%%%%%% Title page %%%%%%%%%%%
+\pagenumbering{roman}
+\thispagestyle{empty}
+\begin{center}
+
+  \vspace*{0.6in}
+  {\Large\textbf{\thesistitle}}
+
+  \vspace{0.7in}
+
+  by
+  \vspace{0.4in}
+
+  \thesisauthor
+  \vfill
+
+\begin{doublespace}
+  A dissertation submitted in partial fulfillment\\
+  of the requirements for the degree of\\
+  Doctor of Philosophy\\
+  Center for Neural Science\\
+  New York University\\
+  \graddate
+\end{doublespace}
+\end{center}
+\vfill
+
+\noindent\makebox[\textwidth]{\hfill\makebox[2.5in]{\hrulefill}}\\
+\makebox[\textwidth]{\hfill\makebox[2.5in]{\hfill\thesisadvisor\hfill}}
+\newpage
+
+%%%%%%%%%%%%% Blank page %%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\vspace*{0in}
+\newpage
+%%%%%%%%%%%%% Frontispiece %%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\vspace*{2 in}
+\begin{center}
+\textit{All your rivers flow into the sea,
+and yet the sea is never full.}
+\\[0.22in]
+\hfill --Space Clamps, 'Alan Turing' \hspace*{1.5in}
+\end{center}
+\newpage
+%%%%%%%%%%%%% Dedication %%%%%%%%%%%%%%%%%%
+\section*{Dedication} \addcontentsline{toc}{chapter}{Dedication}
+\vspace*{1 in}
+\begin{center}
+For my father.
+\end{center}
+\newpage
+%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%
+\section*{Acknowledgements} \addcontentsline{toc}{chapter}{Acknowledgements}
+% \input{../acknowledgements}
+\newpage
+%%%%%%%%%%%%%% Preface %%%%%%%%%%%%
+%\section*{Preface}\addcontentsline{toc}{chapter}{Preface}
+%Chapters 3 and 4 are the result of a collaborative project between the labs of Lynne Kiorpes and Tony Movshon, investigating the neural substrates of amblyopia. The content of Chapter 3 is recently published \parencite{shooner-2015}. A manuscript relating the results of Chapter 4 is in preparation for publication. Chapter 5 represents the current state of an ongoing project with Tony Movshon and Michael Hawken. Chapter 6 is the end result of work I performed in the Movshon lab prior to these collaborations. This final chapter relates closely to the ideas developed more fully in Chapter 5, but I present it separately in brief format for clarity.
+\newpage
+%%%% Abstract %%%%%%%%%%%%%%%%%%
+\section*{Abstract}\addcontentsline{toc}{chapter}{Abstract}
+\input{abstract}
+\newpage
+%%%% Table of Contents %%%%%%%%%%%%
+\tableofcontents
+
+%%%%% List of Figures %%%%%%%%%%%%%
+\listoffigures\addcontentsline{toc}{chapter}{List of Figures}
+\newpage
+
+%%%%% Body of thesis starts %%%%%%%%%%%%
+\pagenumbering{arabic} 
+
+\chapter{Introduction}
+\input{intro-chap}
+% \input{../methods-chap}
+% 
+% % \onehalfspacing
+\chapter{An alternating renewal process describes the buildup of auditory stream segregation}
+
+\input{Chapter2}
+
+\chapter{Cumulative history model of auditory stream segregation captures behavioral effects and constrains neuronal mechanisms}
+% % \doublespacing
+ %\input{chapter3}
+ \chapter{Streams of sound: a synfire sequence detector that performs auditory grouping}
+ \input{chapter4}
+%%%%%%%%%%%%%%%%%
+ 
+% \input{../pop-methods}
+% \input{../pop-results}
+% \input{../pop-discussion}
+% 
+% % \onehalfspacing
+% \chapter{Dichoptic masking in amblyopic cortex}
+% % \doublespacing
+% \input{../binoc-intro}
+% \input{../binoc-methods}
+% \input{../binoc-results}
+% \input{../binoc-discussion}
+% 
+% % \onehalfspacing 
+% \chapter{Superposition masking and surround suppression}
+% % \doublespacing
+% \input{../rvc-intro}
+% \input{../rvc-methods}
+% \input{../rvc-results}
+% \input{../rvc-discussion}
+% \input{../rvc-sup}
+% 
+% % \onehalfspacing
+% \chapter{Spatial tuning of contextual masking}
+% % \doublespacing
+% \input{../sf-intro}
+% \input{../sf-methods-results}
+% \input{../sf-discussion}
+% 
+% \input{../conclusions}
+
+%%%%%%
+\onehalfspacing
+%\printbibliography%[heading=bibintoc]
+\end{document}
